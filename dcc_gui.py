@@ -29,6 +29,18 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -------
+
+INSTRUCTIONS FOR RUNNING
+1. Open terminal (CTRL+ALT+T in Ubuntu).
+2. Go to asti-solar-dcc-tool directory.
+3. Type python dcc.py
+
+N.B.
+Make sure that the modules found in requirements.txt are installed/present
+in the computer.
+If not, try installing them by typing on your terminal:
+    pip install -r requirements.text
+
 """
 
 '''
