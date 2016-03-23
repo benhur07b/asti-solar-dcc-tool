@@ -73,9 +73,12 @@ def get_links(r):
     return links
 
 
-def save_to_file(url, name, proxies):
+def save_to_file(url, name, proxies=None):
 
-    r = requests.get(url, stream=True, proxies=proxies)
+    if proxies:
+        r = requests.get(url, stream=True, proxies=proxies)
+    else:
+        r = requests.get(url, stream=True)
     with open(name, 'wb') as outfile:
         shutil.copyfileobj(r.raw, outfile)
     del r
@@ -157,7 +160,7 @@ def scrape_year_sensor(y, sensor, proxies):
         scrape_month_asti(y, months[m], sensor, proxies)
 
 
-def download_data(inputs, proxies):
+def download_data(inputs, proxies=None):
 
     y = inputs['year']
     m = inputs['month']

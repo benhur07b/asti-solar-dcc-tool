@@ -303,11 +303,16 @@ class DownloadApp(tk.Frame):
                   'day': self.dayEntry.get().strip(),
                   'sensor': self.sensorEntry.get().strip()}
 
-        PROXIES = {"http": "%s:%s" %(proxy, port)}
-
-        os.chdir(saveDir)
-        dcc_download.download_data(inputs, PROXIES)
-        print "DONE!"
+        if proxy == "":
+            os.chdir(saveDir)
+            dcc_download.download_data(inputs)
+            print "DONE!"
+        
+        else:
+            PROXIES = {"http": "%s:%s" %(proxy, port)}
+            os.chdir(saveDir)
+            dcc_download.download_data(inputs, PROXIES)
+            print "DONE!"
 
 
 class CompileApp(tk.Frame):
