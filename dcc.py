@@ -3,7 +3,7 @@
 
 """
 ASTI SOLAR RADIATION DATA DOWNLOAD, COMPILE, AND CONVERT TOOL
-
+-------
 A Collection of Python scripts that downloads daily measurements from
 weather measurment stations (WMS) from the Philippine E-Science Grid
 repository <http://repo.pscigrid.gov.ph/predict>, compiles and averages
@@ -28,6 +28,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-------
 """
 
 '''
@@ -39,6 +40,12 @@ __author__ = "Ben Hur S. Pintor"
 __contact__ = "bhs.pintor<at>gmail.com"
 __version__ = "0.0.1"
 
+import sys
+
+sys.dont_write_bytecode = True
+
+if sys.version_info[0] > 2:
+    print ("WARNING: The Tool is has only been tested for Python 2.7.x")
 
 try:
     import Tkinter as tk
@@ -94,10 +101,9 @@ def main():
 
     # MENUBARS
     menubar = tk.Menu(root)
-    aboutmenu = tk.Menu(menubar, tearoff=0)
-    aboutmenu.add_command(label="README", command=show_readme)
+    # aboutmenu = tk.Menu(menubar, tearoff=0)
+    menubar.add_command(label="README", command=show_readme)
 
-    menubar.add_cascade(label='About', menu=aboutmenu)
     root.config(menu=menubar)
 
     decor = tk.Frame(root)
@@ -121,9 +127,6 @@ def show_readme():
     top.resizable(width=FALSE, height=FALSE)
     msg = tk.Message(top, text=__doc__)
     msg.pack()
-
-# def show_about():
-#     pass
 
 # def show_solar():
 #     pass

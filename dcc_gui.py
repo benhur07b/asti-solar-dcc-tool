@@ -3,10 +3,10 @@
 
 """
 ASTI SOLAR RADIATION DATA DOWNLOAD, COMPILE, AND CONVERT TOOL
-
+-------
 A Collection of Python scripts that downloads daily measurements from
 weather measurment stations (WMS) from the Philippine E-Science Grid
-repository <http://repo.pscigrid.gov.ph/predict>,compiles and averages
+repository <http://repo.pscigrid.gov.ph/predict>, compiles and averages
 them to monthly average values, and saves the result into a shapefile.
 
 NB:
@@ -28,6 +28,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-------
 """
 
 '''
@@ -38,6 +39,11 @@ handles the GUI of the Tool
 __author__ = "Ben Hur S. Pintor"
 __contact__ = "bhs.pintor<at>gmail.com"
 __version__ = "0.0.1"
+
+import os
+import sys
+
+sys.dont_write_bytecode = True
 
 try:
     import Tkinter as tk
@@ -52,13 +58,6 @@ except ImportError:
     from tkinter.constants import *
     import tkinter.filedialog as filedialog
     # print ("Tkinter not found. ")
-
-import os
-import sys
-
-if sys.version_info[0] > 2:
-    print ("WARNING: The Tool is has only been tested for Python 2.7.x")
-
 
 import dcc_constants as con
 import dcc_download

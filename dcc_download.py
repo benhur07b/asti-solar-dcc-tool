@@ -3,7 +3,7 @@
 
 """
 ASTI SOLAR RADIATION DATA DOWNLOAD, COMPILE, AND CONVERT TOOL
-
+-------
 A Collection of Python scripts that downloads daily measurements from
 weather measurment stations (WMS) from the Philippine E-Science Grid
 repository <http://repo.pscigrid.gov.ph/predict>, compiles and averages
@@ -28,6 +28,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-------
 """
 
 '''
@@ -44,6 +45,8 @@ import shutil
 import re
 import sys
 from datetime import datetime
+
+sys.dont_write_bytecode = True
 
 ASTI_URL = "http://repo.pscigrid.gov.ph/predict"
 
