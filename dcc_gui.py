@@ -201,7 +201,7 @@ class DownloadApp(tk.Frame):
                              con.DAY_TT)
 
         self.sensorLabel = tk.Label(self.inputsFrame,
-                                    text='SENSOR NAME',
+                                    text='KEYWORDS',
                                     relief=GROOVE,
                                     width=21,
                                     pady=2,

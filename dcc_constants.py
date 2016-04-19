@@ -80,11 +80,12 @@ MONTH_TT = ("Enter the MONTH (01-12) from which\n" +
     "the sensor data will be downloaded")
 DAY_TT = ("Enter the DAY (01-31) of the month from whinh\n" +
     "the sensor data will be downloaded")
-SENSOR_TT = ("Name of the SENSOR to be downloaded.\n" +
-    "Leave blank for ALL sensors.\n" +
+SENSOR_TT = ("Keyword for SENSOR to be downloaded.\n" +
+    "Leave blank for ALL sensors.\n\n" +
     "SENSORS WITH SOLAR RADIATION MEASURMENTS:\n" +
     "\t> BSWM_LUFFT\n" +
-    "\t> -FIELD")
+    "\t> -FIELD\n\n" + 
+    "Can also be name of location/province (i.e. ALBAY)")
 PROXY_TT = ("Enter the proxy server (if any)")
 PORT_TT = ("Enter the proxy port (if any)")
 DLSAVE_TT = ("Select the directory to save the downloaded sensor readings to.")
